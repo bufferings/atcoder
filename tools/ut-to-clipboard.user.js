@@ -6,7 +6,7 @@
 // @author       Mitsuyuki Shiiba
 // @match        https://atcoder.jp/*
 // @grant        GM_setClipboard
-// @downloadURL  https://raw.githubusercontent.com/bufferings/atcoder/tools/atcoder-ut.user.js
+// @downloadURL  https://raw.githubusercontent.com/bufferings/atcoder/tools/ut-to-clipboard.user.js
 // ==/UserScript==
 
 (function () {
