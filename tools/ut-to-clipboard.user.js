@@ -1,12 +1,12 @@
 // ==UserScript==
-// @name         AtCoder MyJest Cases to Clipboard
+// @name         AtCoder my UT
 // @namespace    https://github.com/bufferings/atcoder
 // @version      0.1
 // @description  Copy test cases from AtCoder to clipboard
 // @author       Mitsuyuki Shiiba
 // @match        https://atcoder.jp/*
 // @grant        GM_setClipboard
-// @downloadURL  https://raw.githubusercontent.com/bufferings/atcoder/tools/ut-to-clipboard.user.js
+// @downloadURL  https://github.com/bufferings/atcoder/raw/main/tools/ut-to-clipboard.user.js
 // ==/UserScript==
 
 (function () {
