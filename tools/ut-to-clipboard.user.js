@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AtCoder my UT
 // @namespace    https://github.com/bufferings/atcoder
-// @version      0.1
+// @version      0.2
 // @description  Copy test cases from AtCoder to clipboard
 // @author       Mitsuyuki Shiiba
 // @match        https://atcoder.jp/*
