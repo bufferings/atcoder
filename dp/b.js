@@ -2,7 +2,6 @@
 
 // utils
 const parseLines = arg => arg.trim().split("\n");
-const parseNum = line => parseInt(line.trim(), 10);
 const parseNums = line => line.trim().split(" ").map(it => parseInt(it, 10));
 
 // my
@@ -32,7 +31,7 @@ const main = arg => {
 if (process.env.__CFBundleIdentifier !== 'com.jetbrains.WebStorm') {
   if (process.argv.length < 3 || process.argv[2] !== "1") {
     require("child_process").fork(
-      __filename, ["1"], {execArgv: ["--stack-size=100000"]});
+      __filename, ["1"], { execArgv: ["--stack-size=100000"] });
   } else {
     main(require('fs').readFileSync('/dev/stdin', 'utf8'));
   }

@@ -5,27 +5,29 @@ const parseLines = arg => arg.trim().split("\n");
 const parseNums = line => line.trim().split(" ").map(it => parseInt(it, 10));
 
 // my
-const my = (N, h) => {
-  let dp = new Array(N + 1).fill(null).map(() => [
-    Number.MIN_VALUE, Number.MIN_VALUE, Number.MIN_VALUE
-  ]);
+const my = (N, W, p) => {
+  const dp = new Array(N + 1).fill(null).map(() => new Array(W + 1).fill(0));
 
-  dp[0] = [0, 0, 0];
   for (let i = 0; i < N; i++) {
-    dp[i + 1][0] = Math.max(dp[i][1], dp[i][2]) + h[i][0];
-    dp[i + 1][1] = Math.max(dp[i][2], dp[i][0]) + h[i][1];
-    dp[i + 1][2] = Math.max(dp[i][0], dp[i][1]) + h[i][2];
+    const [w, v] = p[i];
+    for (let j = 0; j <= W; j++) {
+      dp[i + 1][j] = Math.max(dp[i + 1][j], dp[i][j]);
+      if (j - w >= 0) {
+        dp[i + 1][j] = Math.max(dp[i + 1][j], dp[i][j - w] + v);
+      }
+    }
   }
+
   return Math.max(...dp[N]);
 }
 
 // main
 const main = arg => {
   const lines = parseLines(arg);
-  const [N] = parseNums(lines[0]);
-  const h = lines.slice(1).map(parseNums);
+  const [N, W] = parseNums(lines[0]);
+  const p = lines.slice(1).map(parseNums);
 
-  const result = my(N, h);
+  const result = my(N, W, p);
   console.log(result);
 }
 
